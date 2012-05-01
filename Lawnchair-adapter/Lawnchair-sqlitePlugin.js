@@ -1,6 +1,6 @@
 Lawnchair.adapter('webkit-sqlite', (function () {
     // private methods 
-    var fail = function (e, i) { console.log('error in sqlite adaptor!', e, i) }
+    var fail = function (e, i) { sqlitePlugin.log('error in sqlite adaptor: ' + e.message) }
     ,   now  = function () { return new Date() } // FIXME need to use better date fn
 	// not entirely sure if this is needed...
     if (!Function.prototype.bind) {

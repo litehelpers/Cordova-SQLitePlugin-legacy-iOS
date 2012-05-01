@@ -50,10 +50,10 @@ if (!window.Cordova) window.Cordova = window.cordova;
       throw new Error("Cannot create a SQLitePlugin instance without a dbPath");
     }
     this.openSuccess || (this.openSuccess = function() {
-      console.log("DB opened: " + dbPath);
+			this.log("DB opened: " + dbPath);
     });
     this.openError || (this.openError = function(e) {
-      console.log(e.message);
+			this.log(e.message);
     });
     this.open(this.openSuccess, this.openError);
   };
@@ -101,6 +101,9 @@ if (!window.Cordova) window.Cordova = window.cordova;
       Cordova.exec("SQLitePlugin.close", opts);
     }
   };
+  SQLitePlugin.prototype.log = function(msg) {
+	  Cordova.exec("SQLitePlugin.log", {msg: msg});
+	}
   SQLitePluginTransaction = function(dbPath) {
     this.dbPath = dbPath;
     this.executes = [];

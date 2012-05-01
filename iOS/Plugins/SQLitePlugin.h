@@ -22,6 +22,12 @@
 #import "CDVFile.h"
 #endif
 
+#ifdef DEBUG
+#   define DLog(fmt, ...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
+#else
+#   define DLog(...)
+#endif
+
 #import "AppDelegate.h"
 
 @interface SQLitePlugin : CDVPlugin {
@@ -31,6 +37,7 @@
 @property (nonatomic, copy) NSMutableDictionary *openDBs;
 @property (nonatomic, retain) NSString *appDocsPath;
 
+-(void) log:(NSMutableArray*)arguments withDict:(NSMutableDictionary*)options;
 -(void) open:(NSMutableArray*)arguments withDict:(NSMutableDictionary*)options;
 -(void) backgroundExecuteSqlBatch:(NSMutableArray*)arguments withDict:(NSMutableDictionary*)options;
 -(void) backgroundExecuteSql:(NSMutableArray*)arguments withDict:(NSMutableDictionary*)options;

@@ -30,7 +30,7 @@
         // Make Cordova 1.6 compatible
         //[self setAppDocsPath:[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex: 0]];
         NSString *docs = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex: 0];
-        NSLog(@"Detected docs path: %@", docs);
+        DLog(@"Detected docs path: %@", docs);
         [self setAppDocsPath:docs];
     }
     return self;
@@ -51,6 +51,11 @@
     return dbPath;
 }
 
+-(void) log: (NSMutableArray*)arguments withDict:(NSMutableDictionary*)options
+{
+	DLog(@"%@", [options objectForKey:@"msg"]);
+}
+
 -(void) open: (NSMutableArray*)arguments withDict:(NSMutableDictionary*)options
 {
     NSString *callback = [options objectForKey:@"callback"];
@@ -64,7 +69,7 @@
     sqlite3 *db;
     const char *path = [dbPath UTF8String];
 
-    NSLog(@"using dbPath: %@", dbPath);
+    DLog(@"using dbPath: %@", dbPath);
 
     if (sqlite3_open(path, &db) != SQLITE_OK) {
         [self respond:callback withString:@"{ message: 'Unable to open DB' }" withType:@"error"];
