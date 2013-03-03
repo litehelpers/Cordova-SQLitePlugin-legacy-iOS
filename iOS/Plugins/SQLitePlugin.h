@@ -13,7 +13,7 @@
 #import "sqlite3.h"
 
 #import <CORDOVA/CDVPlugin.h>
-#import <CORDOVA/JSONKit.h>
+#import <CORDOVA/CDVJSON.h>
 
 #import "AppDelegate.h"
 
