@@ -1,4 +1,8 @@
-# Cordova/PhoneGap SQLitePlugin - iOS version
+# Cordova/PhoneGap SQLitePlugin - Legacy iOS version from Spring 2013
+
+**LEGACY VERSION NOTES:**
+- This capture from a fork of [davibe / Phonegap-SQLitePlugin](https://github.com/davibe/Phonegap-SQLitePlugin) is kept for pre-Cordova 2.7 projects only. For new projects please use [pgsqlite / PG-SQLitePlugin-iOS](https://github.com/pgsqlite/PG-SQLitePlugin-iOS).
+- This capture does NOT add `.db` extension and is thus inconsistent with [pgsqlite / PG-SQLitePlugin-iOS](https://github.com/pgsqlite/PG-SQLitePlugin-iOS) & [pgsqlite / PG-SQLitePlugin-Android](https://github.com/pgsqlite/PG-SQLitePlugin-Android).
 
 Native interface to sqlite in a Cordova/PhoneGap plugin, working to follow the HTML5 Web SQL API as close as possible. **NOTE** that the API is now different from [davibe / Phonegap-SQLitePlugin](https://github.com/davibe/Phonegap-SQLitePlugin).
 
@@ -12,14 +16,9 @@ License for this version: MIT
 
 ## Announcements
 
-- [New posting about integration with SQLCipher for iOS](http://brodyspark.blogspot.com/2012/12/integrating-sqlcipher-with.html)
+- Forum & community support at: http://groups.google.com/group/pgsqlite
+- The Android version is moved to [pgsqlite / PG-SQLitePlugin-Android](https://github.com/pgsqlite/PG-SQLitePlugin-Android).
 - New, optional interface to open a database like: `var db = window.sqlitePlugin.openDatabase({name: "DB"});`
-- [PRAGMA support added](http://brodyspark.blogspot.com/2012/12/improvements-to-phonegap-sqliteplugin.html).
-- The Android version is now split off to [brodyspark / PhoneGap-SQLitePlugin-Android](https://github.com/brodyspark/PhoneGap-SQLitePlugin-Android).
-
-## Project Status
-
-This fork will be kept open to concentrate on bug fixing and documentation improvements. Bug fixes in the form of pull requests that are well tested, with unit testing if at all possible, and in decent coding style will be highly appreciated.
 
 ## Highlights
 
@@ -37,8 +36,6 @@ Some other highlights:
 - [Get It Done app](http://getitdoneapp.com/) by [marcucio.com](http://marcucio.com/)
 - [Larkwire](http://www.larkwire.com/): Learn bird songs the fun way
 
-I would like to gather some more real-world examples, please send to chris.brody@gmail.com and I will post them.
-
 ## Known limitations
 
 - API will block app execution upon large batching (workaround: add application logic to break large batches into smaller batch transactions)
@@ -47,10 +44,10 @@ I would like to gather some more real-world examples, please send to chris.brody
 
 ## Other versions
 
-- Android version moved to: https://github.com/brodyspark/PhoneGap-SQLitePlugin-Android
+- iOS version for Cordova/PhoneGap 2.7+: [pgsqlite / PG-SQLitePlugin-iOS](https://github.com/pgsqlite/PG-SQLitePlugin-iOS)
+- Android version moved to new location: [pgsqlite / PG-SQLitePlugin-Android](https://github.com/pgsqlite/PG-SQLitePlugin-Android).
 - Windows Phone 8+ version: https://github.com/marcucio/Cordova-WP-SqlitePlugin
 - iOS enhancements, with extra fixes for console log messages: https://github.com/mineshaftgap/Cordova-SQLitePlugin
-- iOS nested transactions enhancement from: https://github.com/ef4/Cordova-SQLitePlugin
 - Original iOS version with a different API: https://github.com/davibe/Phonegap-SQLitePlugin
 
 Usage
@@ -230,6 +227,8 @@ In addition, for Cordova pre-2.0 iOS, please make the following patch to iOS/Plu
 
 # Support
 
+Community support is available via the new Google group: http://groups.google.com/group/pgsqlite
+
 If you have an issue with the plugin please check the following first:
 - You are using the latest version of the Plugin Javascript & Objective-C source from this repository.
 - You have installed the Javascript & Objective-C correctly.
@@ -243,7 +242,7 @@ If you still cannot get something to work:
   - if the issue is with *adding* data to a table, that the test program includes the statements you used to open the database and create the table;
   - if the issue is with *retrieving* data from a table, that the test program includes the statements you used to open the database, create the table, and enter the data you are trying to retrieve.
 
-Then please raise an issue with the test program included in the description.
+Then please post the issue with your test program to the [pgsqlite forum](http://groups.google.com/group/pgsqlite).
 
 # Unit test(s)
 
@@ -325,9 +324,8 @@ application.
 # Contributing
 
 - Testimonials of apps that are using this plugin would be especially helpful.
-- Issue reports can help improve the quality of this plugin.
+- Reporting issues to the [pgsqlite forum](http://groups.google.com/group/pgsqlite) can help improve the quality of this plugin.
 - Patches with bug fixes are helpful, especially when submitted with test code.
 - Other enhancements will be considered if they do not increase the complexity of this plugin.
-- All contributions may be reused by @brodyspark under another license in the future. Efforts
-will be taken to give credit for major contributions but it will not be guaranteed.
+- All contributions may be reused by [@brodyspark](https://github.com/brodyspark) under another license in the future. Efforts will be taken to give credit for major contributions but it will not be guaranteed.
 
