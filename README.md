@@ -1,4 +1,4 @@
-# Cordova/PhoneGap SQLitePlugin - iOS version
+# Cordova/PhoneGap SQLitePlugin - Legacy iOS version - Summer 2013
 
 Native interface to sqlite in a Cordova/PhoneGap plugin, working to follow the HTML5 Web SQL API as close as possible. **NOTE** that the API is now different from [davibe / Phonegap-SQLitePlugin](https://github.com/davibe/Phonegap-SQLitePlugin).
 
